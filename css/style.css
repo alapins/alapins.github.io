@@ -40,7 +40,11 @@
     }
     /* CUSTOMIZE THE NAVBAR
     -------------------------------------------------- */
-    a:hover.navbar-brand {
+
+    .col-lg-4 a:hover, .col-lg-4 a:visited, .col-lg-4 a:link {
+      color:#666;
+    }
+    a:hover.navbar-brand, a:visited.navbar-brand {
       color:white;
     }
     /* Special class on .container surrounding .navbar, used for positioning it into place. */
