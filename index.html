@@ -1,174 +1,443 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
     <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" href="ico/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,800" rel="stylesheet">
+    <style type="text/css">
+        body {
+            font-family: "Open Sans", sans-serif;
+            background-color: #ededed;
+        }
 
-    <title>Marianna Olshtein</title>
+        .page {
+            filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+            max-width: 61em;
+            margin: auto;
+        }
 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+        .page-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 800;
+            padding: 0 0.5em 0 0.5em;
+            background-color: white;
+            font-size: 0.5em;
+            color: #aaa;
+            margin-left: 1em;
+            z-index: 30;
+        }
 
+        .name {
+            margin: auto;
+            max-width: 15em;
+            font-family: "Open Sans";
+            font-weight: 100;
+            font-size: 2em;
+            padding-top: 2.5em;
+        }
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
+        h1.titlebar {
+            z-index: 0;
+            margin-bottom: 0px;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            align-items: flex-end;
+            height: 3em;
 
-    <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Antic+Didone' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Arapey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Federo' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:100,900' rel='stylesheet' type='text/css'>
-  </head>
+        }
 
+        #logo {
+            display: inline;
+            z-index: 0;
+            vertical-align: baseline;
+            margin-bottom: -1px;
+            height: 100%;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+        }
 
-<!-- NAVBAR
-================================================== -->
-  <body>
-    <div class="navbar-wrapper">
-      <div class="container">
-        <a class="navbar-brand" href="#">Marianna Olshtein</a>
-      </div>
-      <div class="navbar navbar-inverse navbar-static-top">
-        <div class="container">
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="schools.html">Schools</a></li>
-              <li><a href="sports.html">Sports</a></li>
-              <li><a href="camps.html">Camps</a></li>
+        .contents {
+            /*filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));*/
+            position: relative;
+            z-index: 10;
+            padding: 2em 4em 2em 4em;
+            background-color: white;
+            filter: progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee, Strength=2) progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true');
+            -ms-filter: "progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee,Strength=2)" "progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true')";
+        }
+
+        .sectiontitle {
+            font-size: 1.5em;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 100;
+            line-height: 1.3em;
+            border-bottom: 1px solid black;
+            padding: 0.2em 0 0.2em 0;
+            margin: 0.4em 0 0.5em 0;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+            filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+        }
+
+        .sectiontitle + .employment .employment-header .jobtitle {
+            padding-top: 0;
+        }
+
+        h2 {
+            font-weight: 100;
+            font-size: 1.25em;
+            font-style: normal;
+            font-variant: normal;
+            margin-bottom: 0em;
+        }
+
+        .employment {
+            font-style: normal;
+            font-variant: normal;
+            font-weight: 400;
+        }
+
+        .employment-header {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+        }
+
+        .jobtitle {
+            padding-top: 1em;
+            font-size: 1.1em;
+            font-weight: 600;
+            width: 50%;
+            flex-basis: 50%;
+        }
+
+        .jobdates {
+            flex-basis: 50%;
+            width: 50%;
+            text-align: right;
+        }
+
+        .employer {
+            font-weight: 600;
+            width: 50%;
+            flex-basis: 50%;
+        }
+
+        .location {
+            flex-basis: 50%;
+            width: 50%;
+            text-align: right;
+        }
+
+        .summary {
+            margin-left: 1em;
+            margin-top: 0.5em;
+        }
+
+        ul {
+            margin: 0 0 0 0;
+        }
+
+        ul li {
+            padding-top: 0.5em;
+            padding-bottom: 0;
+        }
+
+        .centered {
+            float: left;
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<div class="page">
+    <div class="name centered">Alexander G. Lapins</div>
+    <h1 class="titlebar">
+        <object id="logo" data="img/AL-Sylfaen.svg" type="image/svg+xml"></object>
+        <div class="page-title">RESUME</div>
+    </h1>
+    <div class="contents">
+        <div class="section">
+            <div class="sectiontitle">SUMMARY</div>
+            Hands on technology leader with a proven track record in aligning technology development with business
+            needs, starting new business lines, and building collaborative development teams. Managed development of and
+            implemented technology stacks for all aspects of hedge fund business, including reference data, quantitative
+            research and model building, portfolio and order management systems, algo trading, realtime P&amp;L and
+            portfolio accounting across equities and fixed income.
+            <h2>Career Highlights</h2>
+            <ul>
+                <li>Designed, implemented low-latency technology stack for Java microservices, increasing performance by
+                    10x compared to previous stack.
+                </li>
+                <li>Decreased client-affecting critical release bugs by 80% by instituting, managing agile/spiral hybrid
+                    SDLC.
+                </li>
+                <li>Created Portal Framework in C# to integrate front end for portfolio trading models, monitors and
+                    risk management. Reduced new feature development time by ~50%, grew to host 1/3 of total code in
+                    firm.
+                </li>
             </ul>
-          </div>
         </div>
-      </div>
+        <div class="section">
+            <div class="sectiontitle">PROFESSIONAL EXPERIENCE</div>
+
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Managing Director, Software Engineering</div>
+                    <div class="jobdates">6/2014 – 6/2018</div>
+                    <div class="employer">Alpha Theory</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="summary">Alpha Theory provides SaaS which optimizes position sizing. As member of Executive
+                    Committee, work on all aspects of company development, strategy and growth. Modernized technical
+                    infrastructure, increased performance (both runtime and development time), and increased customer
+                    engagement. Highlights include:
+                    <ul>
+                        <li>Opening top end of market by upgrading Alpha Theory’s security posture. Resulted in adding
+                            (to date) 4 of the top 15 hedge funds as clients, including funds which had previously
+                            declined based on security concerns.
+                        </li>
+                        <li>Decreasing client-affecting critical release bugs by 80% by instituting, managing SDLC
+                            (agile/spiral hybrid). Continuously refining lifecycle based on post-release reviews.
+                        </li>
+                        <li>Pitching, driving redesign of application UI, resulting in 20% increase in sales
+                            conversions. Led hiring, domain-specific training for UX/UI designer; setting criteria for,
+                            supervising choice of new front-end stack to support designs, and reduce future development
+                            time. (Angular2, Typescript)
+                        </li>
+                        <li>Designing, implementing low-latency technology stack for Java microservices, increasing
+                            performance by 10x for first service (Security Master) to use, and reducing maintenance
+                            costs. Stack being used for construction of backend services powering public API and Excel
+                            add-in. (Spring Boot, Aeron Messaging, Kryo, Disruptor, CQEngine, Hibernate/Ebeans/JDBC,
+                            Jackson)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Vice President, Software Engineer</div>
+                    <div class="jobdates">4/2011 – 5/2014</div>
+                    <div class="employer">Millennium Partners</div>
+                    <div class="location">New York, NY</div>
+                    <div class="summary">Worked for Fixed Income Market and Reference Data Technology. Projects
+                        included:
+                        <ul>
+                            <li>Designed, implemented low-latency server for real time and end of day pricing to provide
+                                company-wide normalized real time pricing for corporate, government and mortgage bonds,
+                                futures, options, rates, FX spots and forwards. Aggregated feeds from Bloomberg,
+                                Reuters, QuoteVision, various brokers. Quotes and end of day prices cleaned via
+                                end-user-modifiable rules. Full tick capture, and statistical historical reporting used
+                                by Middle office to refine pricing policies, (Java, Streambase, Solace TibRV)
+                            </li>
+                            <li>Developed data warehouse for use in trading models, including end of day pricing values,
+                                calendars, auction results. (MS SQL Server)
+                            </li>
+                            <li>Developed multithreaded UI allowing Middle Office to validate, clean and sign off on
+                                real time and end of day pricing, see historical intraday pricing (C#, Windows.Forms,
+                                Solace TibRV)
+                            </li>
+                            <li>Developed standalone data loaders administrable through REST/JSON. (C#, Spring.NET)</li>
+                            <li>Evaluated vendor applications for enterprise wide security master, in partnership with
+                                Chief Architect.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Vice President</div>
+                    <div class="jobdates">4/2010 – 3/2011</div>
+                    <div class="employer">Barclays Capital</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="summary">Worked on server components of Bond, CDX/CDS offerings, inquiries management
+                    trading systems written in Java using SOA principles connected by Tibco EMS, using Oracle for
+                    persistence. Designed build and deployment process from scratch for a multi-process loosely
+                    coupled application, using Ant, Ivy, JUnit with a CruiseControl CI server.
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Chief Architect</div>
+                    <div class="jobdates">2/2001 – 1/2010</div>
+                    <div class="employer">George Weiss Associates</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="summary">Created and implemented technology vision for multi-billion-dollar hedge fund.
+                    Managed group of 10 developers and QA. Responsible for all application development, including
+                    home grown Algo Trading, OMS, Trade Accounting, Risk Management systems. Worked with Risk and
+                    Portfolio Managers, Quants, Back Office Management to determine requirements for project and
+                    enterprise architecture. Mentored developers and Quants. Worked hands on in every aspect of
+                    development from requirements writing through maintenance. Significant projects included:
+                    <ul>
+                        <li>Defined full SDLC. Instituted version control, build management tools, QA processes and
+                            standards. Moved department, applications from cut'n'paste reuse to construction of
+                            common components, reducing time, risk for multiple kinds of changes.
+                        </li>
+                        <li>Created toolset broadly applicable to multiple strategies, lowering development
+                            time/cost. Toolset included Risk Management system, portfolio management and monitoring.
+                            Evangelized tools within companies, searching out opportunities for reuse, common
+                            components.
+                        </li>
+                        <li>Slashed development time by 50% by creating Portal development framework using C#
+                            WinForms, Spring.NET. Used for trading model development and visualization by quants;
+                            all risk management development. The Portal provided consistent, easily understood
+                            structure, allowing developers to be used interchangeably and reducing time to learn
+                            existing applications. Framework used by quants and other non-IT developers. 1/3 of the
+                            total code in the company ran in the Portal (everything but the OMS, accounting, and
+                            company wide P&amp;L)
+                        </li>
+                        <li>Wrote trading algorithm, integrated with OMS. Algorithm provided access to additional
+                            liquidity pools and reduced trading costs by 90% compared to previous execution methods.
+                            Algorithm, front end originally developed for single strategy; was requested by traders
+                            within all other strategies within two weeks of initial rollout.
+                        </li>
+                        <li>Designed, personally implemented POC of CEP based P&amp;L engine; also allowed ad hoc
+                            query and aggregation. Calculated company-wide P&amp;L at tax lot level (65,000 tax
+                            lots) in &lt; 3/10 second. Required interfacing with OMS, IDC, Bloomberg, Trade
+                            Accounting Systems to get trades, prices, convert to tax lots, calculate P&amp;L.
+                        </li>
+                        <li>Wrote ADO.NET replacement that increased performance by 10x. Included same functionality
+                            as ADO.NET (joins, views) but based on strongly typed object model, allowed partial
+                            recalculations of aggregates based on changes and incorporated multithreading for
+                            receiving changes from price feeds, message queues.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">CTO, Director of Technology</div>
+                    <div class="jobdates">11/1998 – 2/2001</div>
+                    <div class="employer">Opus360 Corporation</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="summary">As Co-Founder of Opus360, a publicly held professional services automation SaaS
+                    company, participated in all aspects of business, from inception to IPO, including: writing
+                    business plan, defining targeted market spaces, hiring senior management, defining product
+                    lines, performing competitive analysis, designing, implementing deploying products. Personally
+                    created, evangelized strategic technology vision, led technical sales, defined product
+                    strategies.
+                    <ul>
+                        <li>Evangelized technical, business vision within the development group, resulting in
+                            consistency of understanding that investors felt was unparalleled in their other
+                            start-ups
+                        </li>
+                        <li>Built tight knit 30 person engineering department from scratch. Attracted high quality
+                            people with low turnover rate during period of aggressive job hopping. Trained, mentored
+                            architects, developers, UI designers.
+                        </li>
+                        <li>Created product architecture using MVC, Command patterns long before they became
+                            standards in web architecture.
+                        </li>
+                        <li>Designed, prototyped, implemented architectures for three core products, allowing rapid
+                            expansion of development team by minimizing learning curve.
+                        </li>
+                        <li>Defined SDLC, development methodologies which allowed department to scale rapidly with
+                            low barrier to entry for new employees.
+                        </li>
+                        <li>Defined process, executed technical due diligence, selection for partners, technology
+                            providers (Ariba, BEA, Oracle, PeopleSciences) including build versus buy criteria.
+                        </li>
+                        <li>IPO at $77 million valuation 2 years after company start.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Chief Programmer, Webmaster</div>
+                    <div class="jobdates">11/1997 – 11/1998</div>
+                    <div class="employer">GrayPeak Technologies/USWeb</div>
+                    <div class="location">New York, NY</div>
+                </div>
+                <div class="summary">Hired by high growth network consulting company to create an intranet
+                    application to optimize hiring, staffing, project management, and billing, with an eye to
+                    spinning off as a separate company. Led team of internal and overseas developers, wrote
+                    requirements, technical specifications, end user documentation, designed and implemented most
+                    critical portions of product personally.
+                </div>
+            </div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Director of Programming</div>
+                    <div class="jobdates"> 4/1996 –11/1997</div>
+                    <div class="employer">BrainBug LLC</div>
+                    <div class="location">Hartford, CT</div>
+                </div>
+                <div class="summary">As Director of Programming for startup web design company was responsible for
+                    all technology related activities within company, including response to RFCs, project
+                    estimation, budgeting, implementation. Project highlights included: online surplus auction
+                    application for the State of Connecticut; Vice Presidential Debate site in partnership with
+                    RealNetworks, Times Mirror, WTIC; created variety of publication systems.
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="sectiontitle">EDUCATION</div>
+            <div class="employment">
+                <div class="employment-header">
+                    <div class="jobtitle">Bachelor’s Degree</div>
+                    <div class="jobdates">1990-1994</div>
+                    <div class="employer">Trinity College</div>
+                    <div class="location">Hartford, CT</div>
+                </div>
+                <div class="summary">
+                    Graduated with honors. B.A. in English, Minors in Japanese Civilization and European History.
+                    Phi Beta Kappa
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="sectiontitle">TECHNOLOGY PROFICIENCIES</div>
+            <p><i>Languages:</i> C#, Java, Javascript, VB 6, VB.NET, ActionScript, Flex, Esper EPL, XML, XSL, XSD,
+                RDF, HTML, CSS, SQL, T-SQL </p>
+            <p><i>Servers:</i> J2EE / JEE (JSP, Servlets, EJB, JMS), JBoss, Weblogic, SonicMQ, Aeron Messaging,
+                Fiorano ESB, Tomcat, ColdFusion, ASP, DTS, SSIS, SSRS </p>
+            <p><i>Databases:</i> Microsoft SQL Server; Oracle; Vertica </p>
+            <p><i>CEP:</i> Esper; Streambase, Aleri </p>
+            <p><i>Tools:</i> Git, Subversion, CVS, Visual SourceSafe, Perforce, Confluence, Jira, OnTime, Rational
+                Rose, UML, ER/Win </p>
+            <p><i>Build Tools:</i> NUnit, JUnit, NAnt, Ant, Ivy, Maven </p>
+            <p><i>Algorithmic Trading/FIX Platforms:</i> FlexTrade, Inforeach, Cameron </p>
+            <p><i>IDEs:</i> Visual Studio, Eclipse, IntelliJ IDEA, JBuilder </p>
+            <p><i>Components/Frameworks:</i> Spring, Spring.NET, Cairngorm, Hibernate, NHibernate, Devexpress, Chart
+                FX, Vintela SSO for Java, SmartClient, Angular JS, HighCharts, Selenium, Gauge</p>
+        </div>
     </div>
-
-
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide">
-      <!-- Indicators -->
-      <a class="left carousel-control" href="#myCarousel" onClick="slide('prev')"><img class="carousel-nav" src="img/back.png"></span></a>
-      <a class="right carousel-control" href="#myCarousel"  onClick="slide('next')"><img class="carousel-nav" src="img/forward.png"><!--span class="glyphicon glyphicon-chevron-right"></span--></a>
-    </div><!-- /.carousel -->
-
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
-    <div class="container marketing">
-
-      <!-- Three columns of text below the carousel -->
-      <div class="row">
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2><a href="sports.html">Schools</a></h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-primary btn-colors" href="schools.html">School Gallery »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2><a href="sports.html">Sports</a></h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-primary btn-colors" href="sports.html">Sports Gallery »</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <a href="sports.html"><img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Camps</h2></a>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-primary btn-colors" href="camps.html">Camp Gallery »</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
-
-
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-        <div class="col-md-7">
-          <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-        </div>
-      </div>
-
-      <hr class="featurette-divider">
-
-      <!-- /END THE FEATURETTES -->
-
-
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Marianna Olshtein</p>
-      </footer>
-
-    </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
-    <script type="text/javascript">
-      var bgurls = ["http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/salbg6.jpg",
-                    "http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/SalBg5.jpg",
-                    "http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/SalBg4.jpg",
-                    "http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/SalBg3.jpg",
-                    "http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/SalBg2.jpg",
-                    "http://salcincotta.com/wp-content/themes/sal_cincotta/backgrounds/SalBg1.jpg"]
-      var currBg = 0;
-  function slide(next) {
-    if (next == 'next') {
-      currBg++;
-      if (currBg >= bgurls.length) currBg = 0;
-    } else {
-      currBg--;
-      if (currBg < 0) {
-        currBg = bgurls.length - 1;
-      }
-    }
-    $(document.body).css("background-image","url("+bgurls[currBg % bgurls.length]+")");
-  }
+    <script>
+        window.ga = function () {
+            ga.q.push(arguments)
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', 'UA-146776406-1', 'auto');
+        ga('send', 'pageview')
     </script>
-  </body>
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+</div>
+</body>
+
 </html>
