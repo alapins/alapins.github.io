@@ -14,7 +14,7 @@
     <style type="text/css">
         body {
             font-family: "Open Sans", sans-serif;
-            background-color: #ededed;
+            background-color: lightslategray;
         }
 
         .page {
@@ -29,18 +29,20 @@
             padding: 0 0.5em 0 0.5em;
             background-color: white;
             font-size: 0.5em;
-            color: #aaa;
+            color: darkslategray;
             margin-left: 1em;
             z-index: 30;
         }
 
         .name {
+            color: white;
             margin: auto;
             max-width: 15em;
-            font-family: "Open Sans";
+            font-family: "Open Sans", sans-serif;
             font-weight: 100;
             font-size: 2em;
             padding-top: 2.5em;
+            line-height: 1;
         }
 
         h1.titlebar {
@@ -70,7 +72,7 @@
             /*filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));*/
             position: relative;
             z-index: 10;
-            padding: 2em 4em 2em 4em;
+            padding: 3.3% 6.6% 3.3% 6.6%;
             background-color: white;
             filter: progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee, Strength=2) progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true');
             -ms-filter: "progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee,Strength=2)" "progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true')";
@@ -163,6 +165,14 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        @media screen and (max-width: 450px){
+            .name {
+                left: 3em;
+                transform: translate(0%, -50%);
+            }
+        }
+
     </style>
 </head>
 
