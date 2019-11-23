@@ -18,9 +18,22 @@
         }
 
         .page {
-            /*filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));*/
+            filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
             max-width: 61em;
             margin: auto;
+        }
+
+        #name.stuck {
+            font-size:1.5em !important;
+            color:black !important;
+            z-index: 100 !important;
+            background-color: white !important;
+            top:0 !important;
+            width: 100% !important;
+            max-width: 40.66666666em !important;
+            text-align: center !important;
+            padding:0 !important;
+            transform: translateX(-50%) !important;
         }
 
         .page-title {
@@ -29,22 +42,20 @@
             padding: 0 0.5em 0 0.5em;
             background-color: white;
             font-size: 0.5em;
-            color: darkslategray;
+            color: #566778;
             margin-left: 1em;
             z-index: 30;
         }
-
-        .name {
-            color: white;
-            margin: auto;
-            max-width: 15em;
+        .centered {
             font-family: "Open Sans", sans-serif;
             font-weight: 100;
-            font-size: 2em;
-            padding-top: 2.5em;
             line-height: 1;
+            font-size: 2em;
+            color: white;
+            max-width: 15em;
+            padding-top: 2.5em;
+            margin: auto;
         }
-
         h1.titlebar {
             z-index: 0;
             margin-bottom: 0px;
@@ -68,10 +79,10 @@
             filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
         }
 
-        .contents {
+        #contents {
             /*filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));*/
             position: relative;
-            z-index: 10;
+            /*z-index: 10;*/
             padding: 3.3% 6.6% 3.3% 6.6%;
             background-color: white;
             filter: progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee, Strength=2) progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true');
@@ -166,12 +177,13 @@
             transform: translate(-50%, -50%);
 
         }
-        .name::before {
-            content: ;
-        }
 
         @media screen and (max-width: 450px){
-            .name {
+            #name.stuck {
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+            }
+            #name.centered {
                 left: 3em;
                 transform: translate(0%, -50%);
             }
@@ -181,17 +193,13 @@
 </head>
 
 <body>
-<!--[if lte IE 9]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
-    your browser</a> to improve your experience and security.</p>
-<![endif]-->
+<div id="name" class="centered">Alexander G. Lapins</div>
 <div class="page">
-    <div class="name centered">Alexander G. Lapins</div>
     <h1 class="titlebar">
         <object id="logo" data="img/AL-Sylfaen.svg" type="image/svg+xml"></object>
         <div class="page-title">RESUME</div>
     </h1>
-    <div class="contents">
+    <div id="contents">
         <div class="section">
             <div class="sectiontitle">SUMMARY</div>
             Hands on technology leader with a proven track record in aligning technology development with business
@@ -442,6 +450,24 @@
         </div>
     </div>
     <script>
+        const name = document.getElementById("name");
+        window.onscroll = function() {menuState()};
+
+        function menuState() {
+            const pxPerEm = parseFloat(
+                getComputedStyle(
+                    document.querySelector('body')
+                )['font-size']);
+            const positionToStick = document.getElementById("contents").offsetTop+ (1.5*pxPerEm);
+            const stuckAmount = Math.min(window.pageYOffset - positionToStick, 6);
+            if (stuckAmount < 0) {
+                name.classList.remove("stuck");
+                name.style.filter = "";
+            } else {
+                name.classList.add("stuck")
+                name.style.filter = "drop-shadow("+stuckAmount+"px "+stuckAmount+"px "+stuckAmount+"px rgba(0, 0, 0, 0.3))";
+            }
+        }
         window.ga = function () {
             ga.q.push(arguments)
         };
