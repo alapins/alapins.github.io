@@ -18,15 +18,15 @@
         }
 
         #name.stuck {
-            font-size:1.5em !important;
-            color:black !important;
+            font-size: 1.5em !important;
+            color: black !important;
             z-index: 100 !important;
             background-color: white !important;
-            top:0 !important;
+            top: 0 !important;
             width: 100% !important;
             max-width: 40.66666666em !important;
             text-align: center !important;
-            padding:0 !important;
+            padding: 0 !important;
             transform: translateX(-50%) !important;
         }
 
@@ -138,24 +138,28 @@
             font-weight: 600;
             width: 50%;
             flex-basis: 50%;
+            order: 1;
         }
 
         .jobdates {
             flex-basis: 50%;
             width: 50%;
             text-align: right;
+            order: 2;
         }
 
         .employer {
             font-weight: 600;
             width: 50%;
             flex-basis: 50%;
+            order: 3;
         }
 
         .location {
             flex-basis: 50%;
             width: 50%;
             text-align: right;
+            order: 4;
         }
 
         .summary {
@@ -181,64 +185,78 @@
         }
 
         @media print {
-            @page { margin: 0.5in; }
+            @page {
+                margin: 0.5in;
+            }
+
             body {
                 font-size: 10pt;
             }
-            #contents,#name,.page {
+
+            #contents, #name, .page {
                 max-width: unset;
                 filter: unset;
             }
-            h1.titlebar{
+
+            h1.titlebar {
                 display: none;
-                margin:0;
+                margin: 0;
             }
+
             #name {
-                /*border-bottom: 1px solid black;*/
-                width:100%;
+                width: 100%;
                 text-align: left;
                 filter: unset;
                 position: unset;
                 font-size: 24pt;
                 padding: 0;
-                /*margin: 0 0 3pt 0;*/
                 transform: unset;
-                float:unset;
-                left:unset;
-                margin:0;
+                float: unset;
+                left: unset;
+                margin: 0;
             }
+
             #contents {
                 padding: 0;
             }
+
             .summary {
                 margin-left: 0.25in;
                 font-size: 10pt;
                 text-align: justify;
             }
+
             h2 {
                 font-size: 10pt;
                 font-weight: normal;
             }
+
             .section {
-                margin-top:12pt;
+                margin-top: 12pt;
             }
+
             .section:first-of-type ul {
                 padding-inline-start: 0.5in;
                 margin-right: 0.5in;
             }
+
             .summary ul {
                 padding-inline-start: 0.25in;
             }
+
             .summary ul li {
-                padding:0;
+                padding: 0;
             }
-            .employer,.jobdates,.location {
+
+            .employer, .jobdates, .location {
                 font-weight: normal;
                 font-size: 10pt;
             }
+
             .employer {
                 font-weight: 600;
             }
+
             .jobtitle {
                 font-weight: 600;
                 font-size: 11pt;
@@ -246,7 +264,7 @@
 
             .section:first-of-type {
                 text-align: justify;
-                margin:0;
+                margin: 0;
             }
 
             .section:first-of-type .sectiontitle {
@@ -257,18 +275,54 @@
                 border-bottom: 0.5pt solid black;
                 padding: 0;
             }
+
             .sectiontitle .employment-header {
                 page-break-after: avoid;
             }
         }
-        @media screen and (max-width: 450px){
+
+        @media screen and (max-width: 450px) {
+            .long {
+                display: none;
+            }
+
             #name.stuck {
                 left: 50% !important;
                 transform: translateX(-50%) !important;
             }
+
             #name.centered {
                 left: 3em;
                 transform: translate(0%, -50%);
+            }
+
+            .jobtitle {
+                margin-left: 0;
+                order: 1;
+                flex-basis: 100%;
+            }
+
+            .section ul {
+                padding-inline-start: 1em;
+            }
+            .employer {
+                margin-left: 0;
+                order: 2;
+                flex-basis: 100%;
+            }
+
+            .jobdates {
+                text-align: left;
+                order: 3;
+            }
+
+            .location {
+                display: none;
+                order: 4;
+            }
+
+            .summary {
+                margin-left: 0;
             }
         }
 
@@ -310,8 +364,8 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Managing Director, Software Engineering</div>
-                    <div class="jobdates">6/<span class="long">20</span>14 – 6/<span class="long">20</span>18</div>
                     <div class="employer">Alpha Theory</div>
+                    <div class="jobdates">6/<span class="long">20</span>14 – 6/<span class="long">20</span>18</div>
                     <div class="location">New York, NY</div>
                 </div>
                 <div class="summary">Alpha Theory provides SaaS which optimizes position sizing. As member of Executive
@@ -346,29 +400,29 @@
                     <div class="jobdates">4/<span class="long">20</span>11 – 5/<span class="long">20</span>14</div>
                     <div class="employer">Millennium Partners</div>
                     <div class="location">New York, NY</div>
-                    <div class="summary">Worked for Fixed Income Market and Reference Data Technology. Projects
-                        included:
-                        <ul>
-                            <li>Designed, implemented low-latency server for real time and end of day pricing to provide
-                                company-wide normalized real time pricing for corporate, government and mortgage bonds,
-                                futures, options, rates, FX spots and forwards. Aggregated feeds from Bloomberg,
-                                Reuters, QuoteVision, various brokers. Quotes and end of day prices cleaned via
-                                end-user-modifiable rules. Full tick capture, and statistical historical reporting used
-                                by Middle office to refine pricing policies, (Java, Streambase, Solace TibRV)
-                            </li>
-                            <li>Developed data warehouse for use in trading models, including end of day pricing values,
-                                calendars, auction results. (MS SQL Server)
-                            </li>
-                            <li>Developed multithreaded UI allowing Middle Office to validate, clean and sign off on
-                                real time and end of day pricing, see historical intraday pricing (C#, Windows.Forms,
-                                Solace TibRV)
-                            </li>
-                            <li>Developed standalone data loaders administrable through REST/JSON. (C#, Spring.NET)</li>
-                            <li>Evaluated vendor applications for enterprise wide security master, in partnership with
-                                Chief Architect.
-                            </li>
-                        </ul>
-                    </div>
+                </div>
+                <div class="summary">Worked for Fixed Income Market and Reference Data Technology. Projects
+                    included:
+                    <ul>
+                        <li>Designed, implemented low-latency server for real time and end of day pricing to provide
+                            company-wide normalized real time pricing for corporate, government and mortgage bonds,
+                            futures, options, rates, FX spots and forwards. Aggregated feeds from Bloomberg,
+                            Reuters, QuoteVision, various brokers. Quotes and end of day prices cleaned via
+                            end-user-modifiable rules. Full tick capture, and statistical historical reporting used
+                            by Middle office to refine pricing policies, (Java, Streambase, Solace TibRV)
+                        </li>
+                        <li>Developed data warehouse for use in trading models, including end of day pricing values,
+                            calendars, auction results. (MS SQL Server)
+                        </li>
+                        <li>Developed multithreaded UI allowing Middle Office to validate, clean and sign off on
+                            real time and end of day pricing, see historical intraday pricing (C#, Windows.Forms,
+                            Solace TibRV)
+                        </li>
+                        <li>Developed standalone data loaders administrable through REST/JSON. (C#, Spring.NET)</li>
+                        <li>Evaluated vendor applications for enterprise wide security master, in partnership with
+                            Chief Architect.
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="employment">
@@ -534,23 +588,29 @@
     </div>
     <script>
         const name = document.getElementById("name");
-        window.onscroll = function() {menuState()};
+        const contents = document.getElementById("contents");
 
         function menuState() {
             const pxPerEm = parseFloat(
                 getComputedStyle(
                     document.querySelector('body')
                 )['font-size']);
-            const positionToStick = document.getElementById("contents").offsetTop+ (1.5*pxPerEm);
+            const positionToStick = contents.offsetTop + (1.5 * pxPerEm);
             const stuckAmount = Math.min(window.pageYOffset - positionToStick, 6);
             if (stuckAmount < 0) {
                 name.classList.remove("stuck");
                 name.style.filter = "";
             } else {
                 name.classList.add("stuck")
-                name.style.filter = "drop-shadow("+stuckAmount+"px "+stuckAmount+"px "+stuckAmount+"px rgba(0, 0, 0, 0.3))";
+                name.style.filter = "drop-shadow(" + stuckAmount + "px " + stuckAmount + "px " + stuckAmount + "px rgba(0, 0, 0, 0.3))";
             }
         }
+
+        // window.onscroll = function () {
+        //     menuState()
+        // };
+        window.onscroll = menuState;
+
         window.ga = function () {
             ga.q.push(arguments)
         };
