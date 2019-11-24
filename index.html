@@ -17,12 +17,6 @@
             background-color: lightslategray;
         }
 
-        .page {
-            filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
-            max-width: 61em;
-            margin: auto;
-        }
-
         #name.stuck {
             font-size:1.5em !important;
             color:black !important;
@@ -36,26 +30,12 @@
             transform: translateX(-50%) !important;
         }
 
-        .page-title {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 800;
-            padding: 0 0.5em 0 0.5em;
-            background-color: white;
-            font-size: 0.5em;
-            color: #566778;
-            margin-left: 1em;
-            z-index: 30;
-        }
-        .centered {
-            font-family: "Open Sans", sans-serif;
-            font-weight: 100;
-            line-height: 1;
-            font-size: 2em;
-            color: white;
-            max-width: 15em;
-            padding-top: 2.5em;
+        .page {
+            filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3));
+            max-width: 61em;
             margin: auto;
         }
+
         h1.titlebar {
             z-index: 0;
             margin-bottom: 0px;
@@ -79,6 +59,17 @@
             filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
         }
 
+        .page-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 800;
+            padding: 0 0.5em 0 0.5em;
+            background-color: white;
+            font-size: 0.5em;
+            color: #566778;
+            margin-left: 1em;
+            z-index: 30;
+        }
+
         #contents {
             position: relative;
             border-top-right-radius: 0.5em;
@@ -86,6 +77,18 @@
             background-color: white;
             filter: progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee, Strength=2) progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true');
             -ms-filter: "progid:DXImageTransform.Microsoft.Glow(Color=#eeeeee,Strength=2)" "progid:DXImageTransform.Microsoft.Blur(pixelradius=5, enabled='true')";
+            z-index: 100;
+        }
+
+        .centered {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 100;
+            line-height: 1;
+            font-size: 2em;
+            color: white;
+            max-width: 15em;
+            padding-top: 2.5em;
+            margin: auto;
         }
 
         .sectiontitle {
@@ -226,7 +229,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Managing Director, Software Engineering</div>
-                    <div class="jobdates">6/2014 – 6/2018</div>
+                    <div class="jobdates">6/<span class="long">20</span>14 – 6/<span class="long">20</span>18</div>
                     <div class="employer">Alpha Theory</div>
                     <div class="location">New York, NY</div>
                 </div>
@@ -259,7 +262,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Vice President, Software Engineer</div>
-                    <div class="jobdates">4/2011 – 5/2014</div>
+                    <div class="jobdates">4/<span class="long">20</span>11 – 5/<span class="long">20</span>14</div>
                     <div class="employer">Millennium Partners</div>
                     <div class="location">New York, NY</div>
                     <div class="summary">Worked for Fixed Income Market and Reference Data Technology. Projects
@@ -290,7 +293,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Vice President</div>
-                    <div class="jobdates">4/2010 – 3/2011</div>
+                    <div class="jobdates">4/<span class="long">20</span>10 – 3/<span class="long">20</span>11</div>
                     <div class="employer">Barclays Capital</div>
                     <div class="location">New York, NY</div>
                 </div>
@@ -303,7 +306,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Chief Architect</div>
-                    <div class="jobdates">2/2001 – 1/2010</div>
+                    <div class="jobdates">2/<span class="long">20</span>01 – 1/<span class="long">20</span>10</div>
                     <div class="employer">George Weiss Associates</div>
                     <div class="location">New York, NY</div>
                 </div>
@@ -352,7 +355,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">CTO, Director of Technology</div>
-                    <div class="jobdates">11/1998 – 2/2001</div>
+                    <div class="jobdates">11/<span class="long">19</span>98 – 2/<span class="long">20</span>01</div>
                     <div class="employer">Opus360 Corporation</div>
                     <div class="location">New York, NY</div>
                 </div>
@@ -390,7 +393,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Chief Programmer, Webmaster</div>
-                    <div class="jobdates">11/1997 – 11/1998</div>
+                    <div class="jobdates">11/<span class="long">19</span>97 – 11/<span class="long">19</span>98</div>
                     <div class="employer">GrayPeak Technologies/USWeb</div>
                     <div class="location">New York, NY</div>
                 </div>
@@ -404,7 +407,7 @@
             <div class="employment">
                 <div class="employment-header">
                     <div class="jobtitle">Director of Programming</div>
-                    <div class="jobdates"> 4/1996 –11/1997</div>
+                    <div class="jobdates"> 4/<span class="long">19</span>96 –11/<span class="long">19</span>97</div>
                     <div class="employer">BrainBug LLC</div>
                     <div class="location">Hartford, CT</div>
                 </div>
