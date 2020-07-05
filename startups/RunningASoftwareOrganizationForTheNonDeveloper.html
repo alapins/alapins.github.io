@@ -1,0 +1,853 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-05 Sun 17:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Starting a Software Company As A Non-Technical CEO</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Alex Lapins" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" href="css/tufte.css" type="text/css" /><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,800" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Starting a Software Company As A Non-Technical CEO</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org7988e3f">1. Introduction</a></li>
+<li><a href="#orgd397892">2. A Quick Survey of Software Development</a>
+<ul>
+<li><a href="#org49b9162">2.1. Things Every Successful Software Project Must Do</a>
+<ul>
+<li><a href="#org6bb0dea">2.1.1. Define the Problem &amp; the Constraints *</a></li>
+<li><a href="#org7bfe0b7">2.1.2. Define the High Level Solution *</a></li>
+<li><a href="#orgd4dd354">2.1.3. Specify the Low Level Workflows *</a></li>
+<li><a href="#org9cf8ba4">2.1.4. Design the User Interface (UI) for the Application</a></li>
+<li><a href="#org720e347">2.1.5. Specify a High Level Technical Architecture</a></li>
+<li><a href="#org0c0af0a">2.1.6. Specify What Services and Components You Need</a></li>
+<li><a href="#org5747ab4">2.1.7. Decide What to Build vs Buy</a></li>
+<li><a href="#org265c872">2.1.8. Choose a Platform/Infrastructure</a></li>
+<li><a href="#org8ec0616">2.1.9. Security</a></li>
+<li><a href="#org881d5a5">2.1.10. Design the Data Model and Application Model</a></li>
+<li><a href="#orgc8f418b">2.1.11. Implement the Services and Components</a></li>
+<li><a href="#org22ec3b6">2.1.12. Verify the Application Works. Under Every Conceivable Circumstance. *</a></li>
+<li><a href="#orga3cdc13">2.1.13. Maintain the Application</a></li>
+</ul>
+</li>
+<li><a href="#org99f9fdc">2.2. Roles</a>
+<ul>
+<li><a href="#orgd4c23b1">2.2.1. Product Manager</a></li>
+<li><a href="#org6e9f46d">2.2.2. User eXperience (UX) Designer</a></li>
+<li><a href="#org52e8f5a">2.2.3. User Interface (UI) Designer</a></li>
+<li><a href="#orgefa7200">2.2.4. UI/Front End Software Developer</a></li>
+<li><a href="#org9ddeaa7">2.2.5. Server Side/Back End Software Developer</a></li>
+<li><a href="#org8beb919">2.2.6. Full Stack Developer</a></li>
+<li><a href="#org7b390c5">2.2.7. Architect</a></li>
+<li><a href="#org12a48d2">2.2.8. Database Administrator (DBA)</a></li>
+<li><a href="#orgb908440">2.2.9. Network Engineer</a></li>
+<li><a href="#orgafd8f7d">2.2.10. IT</a></li>
+<li><a href="#org53aa68a">2.2.11. Quality Assurance (QA)</a></li>
+<li><a href="#orgb46cc4c">2.2.12. QA Automation Engineer</a></li>
+<li><a href="#orgfd80d7a">2.2.13. DevOps</a></li>
+</ul>
+</li>
+<li><a href="#org962b6d1">2.3. Software Development Methodologies</a>
+<ul>
+<li><a href="#orgc32302f">2.3.1. Some Notes on Estimation</a></li>
+<li><a href="#orgc4ce6bd">2.3.2. Scratching Your Own Itch &#x2013; The Best</a></li>
+<li><a href="#orge6e395a">2.3.3. Waterfall &#x2013; Mostly the Worst</a></li>
+<li><a href="#orgdede02b">2.3.4. Agile &#x2013; The Best Under the Circumstances</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org2257f3c">3. Creating a Development Organization</a>
+<ul>
+<li><a href="#org996b9da">3.1. Fixed Price Outsourcing</a></li>
+<li><a href="#org9f94cda">3.2. Consulting Teams</a></li>
+<li><a href="#orgdf6408f">3.3. Individual Consultants</a></li>
+<li><a href="#org8c5c0cf">3.4. Hire a Team as Employees</a></li>
+<li><a href="#org9b327f5">3.5. Recommendations</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7988e3f" class="outline-2">
+<h2 id="org7988e3f"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+So, you have a great idea for solving a problem in a business you are expert in by building an app, but you&rsquo;ve don&rsquo;t know anything about building software? This essay will give an introduction to the stages, roles, methodologies and terms you&rsquo;re likely to run into.  You have a variety of options in terms of how you get your product built, but you&rsquo;ll likely want to find someone who is familiar with the intricacies of running a software development organization &#x2013; this is a very high level overview of what&rsquo;s involved, and isn&rsquo;t enough to ensure your product is developed correctly.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd397892" class="outline-2">
+<h2 id="orgd397892"><span class="section-number-2">2</span> A Quick Survey of Software Development</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Before we get into the meat of how to run a software company as a non-technical CEO, you should understand what goes on during a software development project, what kinds of roles are required, and the different options for organizing development.
+</p>
+</div>
+<div id="outline-container-org49b9162" class="outline-3">
+<h3 id="org49b9162"><span class="section-number-3">2.1</span> Things Every Successful Software Project Must Do</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+There are a large number of tasks which must be accomplished in any successful software development project.  Different methodologies solve them in different ways, but any successful project must address all of them. As a non-technical CEO, the tasks that you own or play a critical role in are marked with an asterisk.
+</p>
+</div>
+<div id="outline-container-org6bb0dea" class="outline-4">
+<h4 id="org6bb0dea"><span class="section-number-4">2.1.1</span> Define the Problem &amp; the Constraints *</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+This is pretty obvious &#x2013; you have to know what the problem is that you&rsquo;re trying to solve, and the set of constraints the solution must function within to be successful.  Often the constraints are as or more important than the problem itself, and understanding what constraints are imposed by the context in which the solution will be used, the end user&rsquo;s desires, and what activities are important to or difficult for them has more impact on what differentiates a successful product from an unsuccessful one than its functionality.  In most methodologies, the problem definition is contained in as the <b>Requirements</b>.
+</p>
+
+<p>
+You own the problem and constraints definition.  After all, this is what defines the market your company is addressing.
+</p>
+</div>
+</div>
+<div id="outline-container-org7bfe0b7" class="outline-4">
+<h4 id="org7bfe0b7"><span class="section-number-4">2.1.2</span> Define the High Level Solution *</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+Having established the problem and the constraints, figure out what the solution looks like.  What portions are automated and which are manual? What are the specific workflows you&rsquo;re supporting?  What data do you need to collect at each step?  What data do you need to have for each step? It&rsquo;s generally a good idea to have a technical person involved in this phase, since they can give you an idea of how difficult each thing will be to implement, and whether it&rsquo;s even possible (I&rsquo;ve heard a lot of pitches involving AIs that are, apparently, magical in their capabilities and accuracy). In most methodologies, this is also part of the Requirements.
+</p>
+
+<p>
+You also own the high level solution, because that&rsquo;s what the company <i>is</i>. This doesn&rsquo;t mean that you&rsquo;re solely responsible for coming up with the characteristics of the solution, but that you&rsquo;re both directly responsible and accountable for it.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd4dd354" class="outline-4">
+<h4 id="orgd4dd354"><span class="section-number-4">2.1.3</span> Specify the Low Level Workflows *</h4>
+<div class="outline-text-4" id="text-2-1-3">
+<p>
+For each workflow, what screens will it be split up into?  What screens can you get to from each other screen?  What data will you show or be asked to provide at each step?  What actions will occur at each step?
+</p>
+
+<p>
+You directly own this, because it&rsquo;s the materialization of your solution.  You may use a UX Designer or a Product Manager to help you define these, but you&rsquo;re going to be responsible for it at a granular level, making sure that it meets the user needs directly and efficiently.
+</p>
+</div>
+</div>
+<div id="outline-container-org9cf8ba4" class="outline-4">
+<h4 id="org9cf8ba4"><span class="section-number-4">2.1.4</span> Design the User Interface (UI) for the Application</h4>
+<div class="outline-text-4" id="text-2-1-4">
+<p>
+For each screen in the workflow, what fonts will you use?  What types of input fields? Where are the input fields exactly on the screen? Is it different on mobile than on desktop versions of the application, and if so, what does each look like?  What graphics are you going to use and where?
+</p>
+</div>
+</div>
+<div id="outline-container-org720e347" class="outline-4">
+<h4 id="org720e347"><span class="section-number-4">2.1.5</span> Specify a High Level Technical Architecture</h4>
+<div class="outline-text-4" id="text-2-1-5">
+<p>
+The Technical Architecture includes things like:
+</p>
+<ul class="org-ul">
+<li>Define what progamming language or languages you&rsquo;ll be using.</li>
+<li>Choose what libraries<label for="1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="1" class="margin-toggle"/><span class="sidenote">
+A <b>Library</b> is a collection of functions that you can include in your program and call whenever you want.
+</span> and frameworks<label for="2" class="margin-toggle sidenote-number"></label><input type="checkbox" id="2" class="margin-toggle"/><span class="sidenote">
+A <b>Framework</b> is an application or library that allows a programmer to add their own functionality to it in specific ways.  For example, react.js is a UI framework.  It tells you where you can plug in your own logic to create a screen, and when run, it will call your code.  A framework calls your code at specific times and in specific ways.
+</span> you&rsquo;ll use for different parts of the application.</li>
+<li>Decide where you&rsquo;re going to store your persistent data (SQL? Key-Value? Files? Which type?)</li>
+<li>Define how different parts of the application talk to one another will talk to each other (synchronously or asynchronously, using which format &#x2013; and how do you manage changes to their API<label for="3" class="margin-toggle sidenote-number"></label><input type="checkbox" id="3" class="margin-toggle"/><span class="sidenote">
+<b>API</b> stands for Application Programming Interface.  An API defines what requests you can make, what parameters you can pass as part of the request and what they mean, and what the reply looks like, as well as the mechanism and format by which you can make a request..
+</span>s over time?)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0c0af0a" class="outline-4">
+<h4 id="org0c0af0a"><span class="section-number-4">2.1.6</span> Specify What Services and Components You Need</h4>
+<div class="outline-text-4" id="text-2-1-6">
+<p>
+Break down the application into smaller parts that do particular things (Components).  For example, an online store might be broken down into catalog, inventory, shopping cart and payment processing components.  Decide whether each component should just be part of a single program or whether they should run on their own.  Define the technical architecture for each component.
+</p>
+</div>
+</div>
+<div id="outline-container-org5747ab4" class="outline-4">
+<h4 id="org5747ab4"><span class="section-number-4">2.1.7</span> Decide What to Build vs Buy</h4>
+<div class="outline-text-4" id="text-2-1-7">
+<p>
+Are you going to build a given component, buy a library that does it, or pay for a service.  This decision is typically made by comparing overall cost, maturity, capabilities, and availability.
+</p>
+</div>
+</div>
+<div id="outline-container-org265c872" class="outline-4">
+<h4 id="org265c872"><span class="section-number-4">2.1.8</span> Choose a Platform/Infrastructure</h4>
+<div class="outline-text-4" id="text-2-1-8">
+<p>
+What operating system is your application going to run on, and how will you maintain it? Will you buy your own hardware? Run servers from your office or rent space in a data center? Will you host on virtual machines or docker containers, or go serverless entirely?  What kind of networking rules will you need to keep your data private? What kinds of connections will you allow?  How much bandwidth do you need, and from where will you get it?  There&rsquo;s a lot of complexity here, and decisions in this area can have a big impact on the cost of running your application and how well it performs.  Typically, your CTO will specialize in software.  If you&rsquo;re hosting your own servers, you&rsquo;ll also need an IT person (at the C-level, this is usually called a CIO or Chief Information Officer). For most startups today, the answer to all of this is &ldquo;we&rsquo;ll use AWS&rdquo;.  Even within that scope, though, there are still a bunch of decisions that need to be made, since AWS provides multiple different ways of doing the same thing, that differ in the circumstances in which they&rsquo;re used.
+</p>
+</div>
+</div>
+<div id="outline-container-org8ec0616" class="outline-4">
+<h4 id="org8ec0616"><span class="section-number-4">2.1.9</span> Security</h4>
+<div class="outline-text-4" id="text-2-1-9">
+<p>
+Security should be considered as part of every task.  Who is allowed to see what when? How do we make sure that our user information can&rsquo;t be hacked?  How do we make sure that no one else in the same datacenter can see information in our application?  Security is a vast topic, and impacts everything we&rsquo;ll talk about.
+</p>
+</div>
+</div>
+<div id="outline-container-org881d5a5" class="outline-4">
+<h4 id="org881d5a5"><span class="section-number-4">2.1.10</span> Design the Data Model and Application Model</h4>
+<div class="outline-text-4" id="text-2-1-10">
+<p>
+Figure out how the data will be structured in the database and other parts of the application.  Design how the internals of each component will work.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc8f418b" class="outline-4">
+<h4 id="orgc8f418b"><span class="section-number-4">2.1.11</span> Implement the Services and Components</h4>
+<div class="outline-text-4" id="text-2-1-11">
+<p>
+Here&rsquo;s where you actually program what&rsquo;s been previously defined.  Sometimes you realize that the assumptions you made in earlier parts of the decision process were wrong, in which case you have to go back and make different decisions.  Mistakes found in this stage are very expensive.
+</p>
+</div>
+</div>
+<div id="outline-container-org22ec3b6" class="outline-4">
+<h4 id="org22ec3b6"><span class="section-number-4">2.1.12</span> Verify the Application Works. Under Every Conceivable Circumstance. *</h4>
+<div class="outline-text-4" id="text-2-1-12">
+<p>
+Or more simply, <i>test</i>.  Test everything, always.  This is your feedback loop, and it gives you the information you need to run the company. Things you&rsquo;ll test include:
+</p>
+<ul class="org-ul">
+<li>Am I solving an actual problem?</li>
+<li>Are the constraints I&rsquo;ve identified set in stone or can I change them?</li>
+<li>Does this workflow solve the problem?</li>
+<li>Is my value proposition clear to potential users?</li>
+<li>Does the software do what I specified reliably?</li>
+</ul>
+
+<p>
+The last one is software testing, and you&rsquo;ll want to, yourself, verify personally that the software works and that you won&rsquo;t be able to break it.  You&rsquo;re the closest thing the team has to an end user, and so will be able to find things that developers and QC might miss, because they don&rsquo;t think in the same way the user does.  Additionally, there are tests that your development team or QA department will run.  Some of the most significant types of tests are:
+</p>
+<ul class="org-ul">
+<li><b>Functional Tests</b>.  Make sure that the application does what you want. This reveals flaws in decisions made during implementation.</li>
+<li><b>Integeration Tests</b>.  Do the different components/services in the system work correctly together reliably.</li>
+<li><b>Disaster Recovery Tests</b>.  Make sure you don&rsquo;t lose data if one, many, or all servers go down.  Make sure that your app still works if one of your data centers goes down.  Test all the different combinations of things going wrong that you can to make sure that the application behaves reliably.  DR testing most commonly shows flaws in decisions made during  technical architecture and the implementation.</li>
+<li><b>Performance tests</b>.  Make sure that the application is fast enough.</li>
+<li><b>Load tests</b>.  Find out how many users/requests the application can support without slowing unnacceptably or crashing, given a particular number of servers.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga3cdc13" class="outline-4">
+<h4 id="orga3cdc13"><span class="section-number-4">2.1.13</span> Maintain the Application</h4>
+<div class="outline-text-4" id="text-2-1-13">
+<p>
+Make sure the application continues to be available for users.  Address any questions/complaints the users have, Fix bugs you didn&rsquo;t find during testing.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org99f9fdc" class="outline-3">
+<h3 id="org99f9fdc"><span class="section-number-3">2.2</span> Roles</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Each one of the tasks above can have it&rsquo;s own specialist.  Here are the typical roles in a dev organization and what they do:
+</p>
+</div>
+<div id="outline-container-orgd4c23b1" class="outline-4">
+<h4 id="orgd4c23b1"><span class="section-number-4">2.2.1</span> Product Manager</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+This role represents the end user in the context of the business.  The PM is responsible for understanding and communicating the problems and desires of the users to the other members of the team, and makes the ultimate decisions about whether the cost of developing a particular feature is outweighed by the benefit to the user.  The Product Manager is also responsible for creating the strategy that will increase the market share and profitability of the product.
+</p>
+</div>
+</div>
+<div id="outline-container-org6e9f46d" class="outline-4">
+<h4 id="org6e9f46d"><span class="section-number-4">2.2.2</span> User eXperience (UX) Designer</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+The UX Designer is responsible for designing the flow of every part of the application.  They decide what screens are in the application, how the user moves from one to the other, what data is on each screen and how the data is represented (type of inputs, grids vs graphs, types of graphs).  This overlaps with the the PM on one end and the UI Designer on the other.
+</p>
+</div>
+</div>
+<div id="outline-container-org52e8f5a" class="outline-4">
+<h4 id="org52e8f5a"><span class="section-number-4">2.2.3</span> User Interface (UI) Designer</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+This role designs exactly what the screen will look like, including final graphics and position and appearance of every element on the screen. Overlaps with UX Designer on one side and Software Developer on the other (since the design is constrained by technical capabilities, and may be constrained by cost to implement, if a particular theme already exists for the UI framework).
+</p>
+</div>
+</div>
+<div id="outline-container-orgefa7200" class="outline-4">
+<h4 id="orgefa7200"><span class="section-number-4">2.2.4</span> UI/Front End Software Developer</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+Writes software for the User Interface.
+</p>
+</div>
+</div>
+<div id="outline-container-org9ddeaa7" class="outline-4">
+<h4 id="org9ddeaa7"><span class="section-number-4">2.2.5</span> Server Side/Back End Software Developer</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<p>
+Writes software that runs on the server.
+</p>
+</div>
+</div>
+<div id="outline-container-org8beb919" class="outline-4">
+<h4 id="org8beb919"><span class="section-number-4">2.2.6</span> Full Stack Developer</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<p>
+Writes software for both the UI and the server.
+</p>
+</div>
+</div>
+<div id="outline-container-org7b390c5" class="outline-4">
+<h4 id="org7b390c5"><span class="section-number-4">2.2.7</span> Architect</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<p>
+An architect is usally a very senior developer who is responsible for the Technical Architecture, dividing the application into components, and often the Platform/Infrastructure choice. Overlaps with all of the development roles.
+</p>
+</div>
+</div>
+<div id="outline-container-org12a48d2" class="outline-4">
+<h4 id="org12a48d2"><span class="section-number-4">2.2.8</span> Database Administrator (DBA)</h4>
+<div class="outline-text-4" id="text-2-2-8">
+<p>
+Databases are complicated.  DBAs make sure they stay up and running, are backed up and can be restored, and perform well (including optimizing queries).  There are also Database Developers, who are more specialized to optimizing queries and designing data models.
+</p>
+</div>
+</div>
+<div id="outline-container-orgb908440" class="outline-4">
+<h4 id="orgb908440"><span class="section-number-4">2.2.9</span> Network Engineer</h4>
+<div class="outline-text-4" id="text-2-2-9">
+<p>
+Responsible for setting up the network, defining the routes between servers, and instituting the required network level permissions.  Even if you are not officially managing the network at your hosting provider, you will still need to set up the firewalls around your servers, detect when you&rsquo;re under attack. and set up ways of mitigating those attacks.
+</p>
+</div>
+</div>
+<div id="outline-container-orgafd8f7d" class="outline-4">
+<h4 id="orgafd8f7d"><span class="section-number-4">2.2.10</span> IT</h4>
+<div class="outline-text-4" id="text-2-2-10">
+<p>
+An umbrella term for the people who set up the servers and operating systems, keep the OS up to date with bug fixes and security patches, and administrate some of the more complicated typically used pieces of software (ex. mail server and compliance software)l  Overlaps with Network Engineers, DBAs, Architects.
+</p>
+</div>
+</div>
+<div id="outline-container-org53aa68a" class="outline-4">
+<h4 id="org53aa68a"><span class="section-number-4">2.2.11</span> Quality Assurance (QA)</h4>
+<div class="outline-text-4" id="text-2-2-11">
+<p>
+QA spans two activities:
+</p>
+<ul class="org-ul">
+<li>Quality Assurance, which involves making sure that the overall process of software development is running properly.  QA often manages the overall development process, making sure that the required information for the next step is defined and documented.</li>
+<li>Quality Control (QC), which is responsible for defining and executing test cases to ensure that the application meets the requirements.  Execution may be automated in some cases.
+Usually, today, when people talk about QA they really mean QC.  QA overlaps with the Product Manager (good QA is a very detail oriented version of a PM without the application strategy portion).</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb46cc4c" class="outline-4">
+<h4 id="orgb46cc4c"><span class="section-number-4">2.2.12</span> QA Automation Engineer</h4>
+<div class="outline-text-4" id="text-2-2-12">
+<p>
+Many tests can be automated.  A QA Automation person writes programs that test the application. There are different frameworks and languages used to test the UI and server, and for different types of tests (load, integration, performance).  Since the tests are code, they can have bugs, and writing a complete, flexible test suite can have the same cost as developing the application itself.  Often, some level of automated testing is done by the development team.  The amount of automated testing needed by an application depends on many different factors.
+</p>
+</div>
+</div>
+<div id="outline-container-orgfd80d7a" class="outline-4">
+<h4 id="orgfd80d7a"><span class="section-number-4">2.2.13</span> DevOps</h4>
+<div class="outline-text-4" id="text-2-2-13">
+<p>
+This is a relatively new role that came about because of the rise of PaaS<label for="4" class="margin-toggle sidenote-number"></label><input type="checkbox" id="4" class="margin-toggle"/><span class="sidenote">
+<b>Platform as a Service</b>.  The ability to host servers on someone else&rsquo;s infrastructure, and manage server creation through a set of APIs
+</span>.  This role combines the responsibilities of IT, Network Engineer and DBA into a single role who&rsquo;s goal is to write programs that call the PaaS APIs to do the jobs of the previously mentioned roles.  For example, DevOps would write a program to update all 100 servers in your fleet with the latest version of the OS.  They might also write scripts that, when you&rsquo;re getting a lot of user requests, would add more servers to your fleet to handle the load, and remove them when the load went down.
+</p>
+
+<p>
+Sometimes DevOps also means that your application developers (typically a Back End or Full Stack Developer) also takes on the responsibility for writing PaaS-based programs.  This can be a positive in that merging hardware and software can lead to greater efficiencies for the application as a whole.  Typically, though, app developers lack detailed knowledge about the intricacies of the items covered in the IT arena, and you can wind up with significantly higher operating costs or security vulnerabilities as a result.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org962b6d1" class="outline-3">
+<h3 id="org962b6d1"><span class="section-number-3">2.3</span> Software Development Methodologies</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+Software methodologies should be evaluated by two criteria:
+</p>
+<ul class="org-ul">
+<li><b>Efficiency</b> &#x2013; how much time, effort, and people are required to produce the software</li>
+<li><b>Accuracy</b> &#x2013; how well does it deliver what the customer really wants at the time the software is delivered, rather than what they said they wanted at the start.</li>
+</ul>
+</div>
+<div id="outline-container-orgc32302f" class="outline-4">
+<h4 id="orgc32302f"><span class="section-number-4">2.3.1</span> Some Notes on Estimation</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+Note that one thing you might expect in this list is missing: <b>predictability</b>.  Software development is famously unpredictable.  They&rsquo;ve been doing academic studies on software development since the 60s, and the conclusion is that software estimation, due to the amount of complexity involved in a project of any significant size, is typically within an order of magnitude of what actually happens. There are lots of things that can be done to increase accuracy, particularly when the project you&rsquo;re working on is the same as other projects you&rsquo;ve worked on, but it&rsquo;s still typically only within 100% of the original estimate.
+</p>
+
+<p>
+This may seem strange, since software development happens under fixed time (or budget, which amounts to the same thing) constraints all the time.  If it&rsquo;s so fabulously impossible to estimate, how does anything get done?  Isn&rsquo;t this a huge overstatement?
+</p>
+
+<p>
+How things get done in a predictable amount of time is by manipulating the values in the <a href="https://en.wikipedia.org/wiki/Project_management_triangle">Project Management Triangle</a>, usually expressed as &ldquo;Good, fast, cheap.  Pick two.&rdquo;  When estimations are off, usually the developer will trade some element of &ldquo;Good&rdquo; to make up the time, either in terms of the completeness of functionality or in terms of its reliability. Additionally, software projects are usually divided into small &ldquo;sprints&rdquo; where a subset of functionality is worked on for a short period of time &#x2013; 1-2 weeks.  If estemations at that level of granularity are off, fixes can be added in a later sprint, and scope can be changed in the course of sprints to make things fit.
+</p>
+
+<p>
+This is why fixed price software development is always suspicious.  In order to generate the fixed price, the vendor must know enough of the final expected functionality to be able to say when the job is complete and have the customer agree, meaning the scope is fixed. Since the vendor is setting a fixed price, the cost portion of the triangle is fixed, meaning that the number of man days for developers is also fixed, unless the vendor is willing to lose profit on the engagement.  There are a couple of ways the vendor can safeguard profitability:
+</p>
+<ol class="org-ol">
+<li>Pad the price enough to absorb any overruns.</li>
+<li>Make sure that they&rsquo;ve built this kind of project before, or something close to it.  If they just have to customize existing code, the overall scope of work is smaller, so the amount that they could be off by is less.</li>
+<li>Alternatively, make sure there are open source or commercial libraries or services that will do the majority of the work.  Stringing together libraries and choosing what parameters to pass as part of which requests is less actual development, so less risky.</li>
+<li>Keep the Scope high enough level that there are a variety of implementations at different complexities that will meet the requirements.  (i.e. redefine some quantity of &ldquo;good&rdquo;).</li>
+<li>Lower quality/reliability, if the user is unlikely to find the bug within a certain period after delivery.  This works well if you can charge a maintenance fee, particularly if the maintenance fee is set at project end.</li>
+<li>Most consulting companies don&rsquo;t have all of their resources in a gig at one time.  You can use your benched resources to add horsepower.  For the company, it&rsquo;s the same cost, since they&rsquo;re getting their salaries although not on another job.</li>
+<li>Similarly, if the problem is one of just having enough people working enough hours, you can replace a senior resource with some junior resources, and use the senior on a different project.</li>
+</ol>
+
+<p>
+Fixed price bids can work well if you need absolute cost containment, and you don&rsquo;t have fixed needs about the quality of all of the deliverables &#x2013; if some items just need to check a box and others have very specific requirements, fixed price can be OK.
+</p>
+
+<p>
+I&rsquo;m going to present a scattering of the methodologies you&rsquo;re likely to encounter, and discuss their strengths and weaknesses.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4ce6bd" class="outline-4">
+<h4 id="orgc4ce6bd"><span class="section-number-4">2.3.2</span> Scratching Your Own Itch &#x2013; The Best</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+This methodology is really simple.  I have a problem.  I write a program to solve the problem.  I&rsquo;m happy. Done.
+</p>
+
+<p>
+This is the most efficient and accurate way of doing development, because:
+</p>
+<ul class="org-ul">
+<li>It&rsquo;s perfectly accurate. There is perfect knowledge at every part of the development process about what the customer wants and what tradeoffs they will accept..</li>
+<li>It&rsquo;s perfectly efficient because there is no communications overhead, and the cost/benefit ratio of all decisions is always what the client wants at the current moment.</li>
+</ul>
+
+<p>
+Most open source software started using this methodology, including almost all of the big libraries that are used by millions of developers. It is, pretty clearly, the best possible way to develop software.
+</p>
+
+<p>
+It doesn&rsquo;t work under all conditions, though.  For example, if the person having the problem doesn&rsquo;t know how to program, it&rsquo;s not so effective.  Or if you don&rsquo;t have enough knowledge about a technology you need to use to solve the problem.  Or if you need the problem solved in less time than you could program the solution in, and need some more people to help you.
+</p>
+</div>
+</div>
+<div id="outline-container-orge6e395a" class="outline-4">
+<h4 id="orge6e395a"><span class="section-number-4">2.3.3</span> Waterfall &#x2013; Mostly the Worst</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+I&rsquo;m including this one because it tends to crop up in consulting gigs, particularly where they&rsquo;re fixed price. Waterfall breaks the different activities into types, depending on who&rsquo;s doing them, and puts them in a specific order:
+<img src="waterfall.jpg">
+Usually, this is done for the application as a whole, rather than for individual parts of the application.  Only once a particular step is complete can the next step begin.  Typically the people at each step have access only to the preceding step.  The end result of the early steps is a set of documents, which are used to communicate what the next step should do.
+</p>
+
+<p>
+Advocates will give the following pros for the waterfall methodology:
+</p>
+<ol class="org-ol">
+<li>Top down definition, both as the client determining functionality and within different departments working on the project.</li>
+<li>Decisions are finalized at the most inexpensive possible point.  Wrong requirements are more and more expensive to fix the farther down the waterfall you go, so you finalize each area, do a formal review and handoff to the next step, which allows any problems the next step sees to be fixed before having impact on the next areas.</li>
+<li>Fully Auditable.  Since requirements are documented in full detail at each step, there&rsquo;s less miscommunication or missed items, the full contract for what is to be built is visible to the managers at the top, and if there&rsquo;s a problem, you can, post-mortem, figure out where it came from and make adjustments so future projects won&rsquo;t make the same mistake.</li>
+<li>More predictable.  At the end of each stage, the time cost for the next stage can be estimated more accurately, since all requirements necessary to do the next stage are known, documented, and unchanging.  It&rsquo;s still inaccurate if you&rsquo;re estimating based on just the top items in the waterfall, but it gets more accurate the farther down the waterfall you go.</li>
+</ol>
+<p>
+In practice, though, it usually winds up not working well against our axes of evaluation:
+</p>
+<ol class="org-ol">
+<li>It&rsquo;s very inefficient, since a lot of time is spent on documentation, and the split between specialized roles results in high barriers to communication.</li>
+<li>It&rsquo;s not accurate, since it&rsquo;s a big game of telephone.  And because each slippage is locked at each stage, and the application is done as one piece, what comes out at the end is often not what the client wanted.</li>
+<li>It&rsquo;s also not accurate because needs change over time, and what comes out at the end of the process often isn&rsquo;t what was desired at first.</li>
+</ol>
+
+<p>
+It can be useful, however, when you&rsquo;re rewriting a large system.  In that case, the requirements are known and unchanging, and the impact of making a change to any part of the system needs to be analyzed for the system as a whole.  So it&rsquo;s not completely useless.
+</p>
+</div>
+</div>
+<div id="outline-container-orgdede02b" class="outline-4">
+<h4 id="orgdede02b"><span class="section-number-4">2.3.4</span> Agile &#x2013; The Best Under the Circumstances</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+Agile arose in reaction to the use of waterfall in the late 90s.  In 2001, a group of senior developers put together the<a href="http://agilemanifesto.org"> Agile Manifesto</a> which basically describes the characteristics of any small development team in a buisiness after evolutionary selective pressure has been applied.  I&rsquo;m going to quote the whole thing, because it&rsquo;s brief and all of the ideas are important.  The manifesto is as follows:
+</p>
+<div class="epigraph"><blockquote>
+<p>
+We are uncovering better ways of developing
+software by doing it and helping others do it.
+Through this work we have come to value:
+</p>
+
+<p>
+Individuals and interactions over processes and tools<br>
+Working software over comprehensive documentation<br>
+Customer collaboration over contract negotiation<br>
+Responding to change over following a plan
+</p>
+
+<p>
+That is, while there is value in the items on
+the right, we value the items on the left more.
+</p>
+
+</blockquote></div>
+<p>
+Additionally, they defined 12 principles:
+</p>
+<ol class="org-ol">
+<li>Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.</li>
+<li>Welcome changing requirements, even late in development. Agile processes harness change for the customer&rsquo;s competitive advantage.</li>
+<li>Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</li>
+<li>Business people and developers must work together daily throughout the project.</li>
+<li>Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</li>
+<li>The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</li>
+<li>Working software is the primary measure of progress.</li>
+<li>Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</li>
+<li>Continuous attention to technical excellence and good design enhances agility.</li>
+<li>Simplicity&#x2013;the art of maximizing the amount of work not done&#x2013;is essential.</li>
+<li>The best architectures, requirements, and designs emerge from self-organizing teams.</li>
+<li>At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly.</li>
+</ol>
+
+<p>
+Software built according to the above principles is both efficient, due to low communication barriers and overhead, and accurate, since it reacts to changes in user requirements in a timely fashion and has a tight feedback loop.  A large part of this is due to adaptability &#x2013; all of the tasks are done, but the order within a single project may vary according to what the team thinks best for a given item.
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2257f3c" class="outline-2">
+<h2 id="org2257f3c"><span class="section-number-2">3</span> Creating a Development Organization</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+While Agile is clearly the best way to go, isn&rsquo;t really a methodology as one usually thinks of them.  it&rsquo;s basically saying: hire smart people, let them choose what to do based on the circumstances, and communicate with them a lot, without predefined mechanisms or times<label for="5" class="margin-toggle sidenote-number"></label><input type="checkbox" id="5" class="margin-toggle"/><span class="sidenote">
+There are numerous agile methodologies that try to formulate stricter rules and roles to meet the agile principles above, but they all wind up compromising one or more of the most important ideas, usually around free communication with the business people or self-organization of the team. The most blatant example is the universal use of the term &ldquo;sprint&rdquo; to designate a delivery period.  Sprints are defnitionally unsustainable, violating the 8<sup>th</sup> principle.
+</span>. Additionally, the whole &ldquo;software development is unpredictable&rdquo; thing is really concerning because, as a CEO, you need the following from your development organization, in addition to the efficiency and accuracy through flexibility that Agile is meant to give you:
+</p>
+<ol class="org-ol">
+<li><b>Predictable Costs</b>.  How much capital do you have to raise and how much equity do you have to give up to get to a working product?</li>
+<li><b>Predictable Deliverables</b>. When will I have a saleable, working product?  How much runway do I need to have to get sales to cover costs?</li>
+<li><b>Alignment</b>. In order to be efficient, your development team, whether insourced or outsourced, needs to be motivated to work for the best interests of the company.</li>
+</ol>
+<p>
+It&rsquo;s important, though, to recognize that both product development and software development work through successive approximation.  At a certain point, you&rsquo;ve covered a problem in enough detail that it&rsquo;s ready to launch.  There&rsquo;s a tension between the predictability that you want and need for capital raising and the reality of how product and software development works in practice.  Generally speaking, when starting a team, flexibility and efficiency are more important than predictability of time or delivery.  At the start, you don&rsquo;t have enough clarity on what will actually succeed as a product to be able to accurately forecast what will be required to deliver it.
+</p>
+
+<p>
+What are your options for development teams?
+</p>
+</div>
+
+<div id="outline-container-org996b9da" class="outline-3">
+<h3 id="org996b9da"><span class="section-number-3">3.1</span> Fixed Price Outsourcing</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+You provide them with a clear set of specifications (or they help you develop specs) and, for a fixed price, they deliver the working product described therein.  This basically has the same pros and cons as the waterfall model, since the price (and therefore their internal cost) is either set in advance of knowing all the details (inefficient), or requires functionality to be locked in place and unchanging (inaccurate).  There&rsquo;s also potential financial slippage &#x2013; fixed price is essentially introducing a financial middleman that manages financial risk across projects for their own profit. I&rsquo;m generally detail oriented and so have a highly nuanced view on when different things are appropriate or not.  My take on fixed price outsourcing for whole product development is: NO.
+</p>
+
+<p>
+<b>Management Overhead:</b> Low (a technical and project manager are built into the price)
+<b>Tailoring to your Business:</b> Low (they have to control variability, so you&rsquo;re going to get technical solutions that are off-the-rack as much as possible)
+<b>Time to Ramp Up:</b> Low
+</p>
+</div>
+</div>
+<div id="outline-container-org9f94cda" class="outline-3">
+<h3 id="org9f94cda"><span class="section-number-3">3.2</span> Consulting Teams</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+Use an agency to hire a dev team.  This will usually include a Lead/Project Manager and people with the right skills for your project.  A larger agency also provides the team access to skillsets that you may only need irregularly, and can replace members as needed.  This provides flexibility and depth in staffing, as well as some assurances of the skill and quality of the team members, and often the team has worked together before, meaning that there&rsquo;s less slippage due to learning skills and work styles.  However, agencies typically charge a 50% premium in their rates above what the actual people doing the work make, and since this caps the earning potential of their employees, more senior/highly skilled people often leave to start their own businesses.  However, in some cases having a pre-gelled team and a depth of skills available on demand is well worth the premium. The team should be hired for a period of time, rather than on a project basis, and this should be done on a Time &amp; Materials basis, not fixed price.  You should be able to interview at least the team lead, and verify that they will be working with a pre-existing team that has worked together before.  Since this is a whole-team outsourcing, you also need to make sure that their development style and communications expectations are in alignment with what you need.
+</p>
+
+<p>
+<b>Management Overhead:</b> Low (a technical and project manager are built into the price)<br>
+<b>Tailoring to your Business:</b> Medium &#x2013; actually depends on the size of the agency and their variety of skills.<br>
+<b>Time to Ramp Up:</b> Low
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf6408f" class="outline-3">
+<h3 id="orgdf6408f"><span class="section-number-3">3.3</span> Individual Consultants</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+Individual consultants provide the greatest flexibility, at the cost of you having to source them.  Recruiting agencies representing consultants typically take a 30% cut of the rate, so you are paying a premium for being able to get candidates.  This is closer to hiring employees, with the ability to change them out more easily and hire them for shorter periods of time.  If people on your team know/have worked with consultants previously, you can eliminate the recruiter overhead.
+</p>
+
+<p>
+<b>Management Overhead:</b> High (you&rsquo;re managing the individuals)<br>
+<b>Tailoring to your Business:</b> High &#x2013; actually depends on the size of the agency and their variety of skills.<br>
+<b>Time to Ramp Up:</b> High (depends partially on whether team members have worked with each other before)
+</p>
+</div>
+</div>
+<div id="outline-container-org8c5c0cf" class="outline-3">
+<h3 id="org8c5c0cf"><span class="section-number-3">3.4</span> Hire a Team as Employees</h3>
+<div class="outline-text-3" id="text-3-4">
+<p>
+This provides the best alignment and predictable cost structure.  It takes time to hire, though, and at the beginning it&rsquo;s usually not clear what skillsets are going to be most needed.  Making a bad hire can also be expensive, and is more difficult to get out of, and there is overhead for each member added.
+</p>
+
+<p>
+<b>Management Overhead:</b> High (you&rsquo;re managing the individuals)<br>
+<b>Tailoring to your Business:</b> High
+<b>Time to Ramp Up:</b> High (depends partially on whether team members have worked with each other before)
+</p>
+</div>
+</div>
+<div id="outline-container-org9b327f5" class="outline-3">
+<h3 id="org9b327f5"><span class="section-number-3">3.5</span> Recommendations</h3>
+<div class="outline-text-3" id="text-3-5">
+<ul class="org-ul">
+<li>Hire people for a fixed time, not a fixed project for the overall application. Hire people for a fixed project on a Time &amp; Materials basis for small portions requiring specialized skills.  Make sure ahead of time that if you need that person later on a brief basis, they&rsquo;ll be able to do that.</li>
+<li>Set out a length of time within which you expect to be able to deliver the critical functions of the application, pad it, and hire/raise capital to cover that period of time.  Focus on efficiency and accuracy in how you structure your team, make sure you can pivot quickly in the face of new information, and trust in that agility to either get you to a working Minimal Viable Product in the given time.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Footnotes --><!-- 
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+A <b>Library</b> is a collection of functions that you can include in your program and call whenever you want.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+A <b>Framework</b> is an application or library that allows a programmer to add their own functionality to it in specific ways.  For example, react.js is a UI framework.  It tells you where you can plug in your own logic to create a screen, and when run, it will call your code.  A framework calls your code at specific times and in specific ways.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<b>API</b> stands for Application Programming Interface.  An API defines what requests you can make, what parameters you can pass as part of the request and what they mean, and what the reply looks like, as well as the mechanism and format by which you can make a request..
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<b>Platform as a Service</b>.  The ability to host servers on someone else&rsquo;s infrastructure, and manage server creation through a set of APIs
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+There are numerous agile methodologies that try to formulate stricter rules and roles to meet the agile principles above, but they all wind up compromising one or more of the most important ideas, usually around free communication with the business people or self-organization of the team. The most blatant example is the universal use of the term &ldquo;sprint&rdquo; to designate a delivery period.  Sprints are defnitionally unsustainable, violating the 8<sup>th</sup> principle.
+</p></div></div>
+
+ --></div>
+<div id="postamble" class="status">
+<p class="author">Author: Alex Lapins</p>
+<p class="date">Created: 2020-07-05 Sun 17:24</p>
+</div>
+</body>
+</html>
